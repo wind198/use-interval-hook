@@ -21,18 +21,30 @@ export default function useIntervalHook(props: IUseIntervalHookProps) {
 
   const [isPaused, setIsPaused] = useState(!!deactivedAtFirst);
 
+  /**
+   * Reactivate the paused hook
+   */
   const activate = useCallback(() => {
     setIsPaused(false);
   }, []);
 
+  /**
+   * Temporarily pause the hook, callbacks wil not be called, but timelapse still get updated
+   */
   const pause = useCallback(() => {
     setIsPaused(true);
   }, []);
 
   const timerRef = useRef<NodeJS.Timer>();
 
+  /*
+  * Indicate the amount of time passed since the hook get initialized 
+  */
   const [timeLapse, setTimeLapse] = useState(0);
 
+  /**
+   * Clear the timer, timelapse stop updating, callback will not be called anymore
+   */
   const stop = useCallback(() => {
     if (timerRef.current) {
       clearInterval(timerRef.current);

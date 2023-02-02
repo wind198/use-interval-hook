@@ -1,29 +1,24 @@
-# Use List Selection Management
+# Use Interval hook
 ## Introduction
-  This hook is used to provide auxiliary data related to selection status of a list, as well as utility functions to manipulate selection status of list items.
+  This hook is allow trigger callback on interval in React with ease (which often cause a lot of pain relating to closures), also it return function that allow more control over how often the callback is called
 ## Example
 ```javascript
-import useListSelectionManagement from "use-list-selection-management";
+import useInterval from "use-interval-hook";
 
-const data = [
-    {id:"1"},
-    {id:"2"},
-    {id:"3"},
-    {id:"4"},
-]
+callback = ()=>{
+  console.log("Hello world!");
+}
 
 const {
-    totalItemsCount, //count total items in the list
-    selectedItems, //partial list of selected items
-    selectedItemsCount,  //count total items in the list
-    isAllSelected, // A boolean indicating whether all items are selected
-    isSomeButNotAllSelected, // A boolean indicating whether some but not all items are selected
-    toggleThisItem, // A function to change selection status of an item
-    toggleAllItems, // A function to change selection status of all items in the list
-    listSelectionMap, // The map that record selection status of items in the list
-  } = useListSelectionManagement(
-    data, // An array of items
-    (i) => i.id), // A function that returns the id of the item, help recognize them
+    pause,
+    activate,
+    stop,
+    timeLapse,
+  } = useInterval({
+  interval: 1000;
+  callback,
+  delay: 2000;
+  })
 
 
 ```

@@ -1,22 +1,23 @@
 {
-  "name": "use-list-selection-management",
+  "name": "use-interval-hook",
   "version": "1.0.0",
-  "description": "A React hook for managing list selection status",
+  "description": "A React hook to implement useInterval logics thit more tool to control how often the callback is called",
   "main": "dist/index.js",
   "repository": {
-    "url": "https://github.com/wind198/use-list-selection-management"
+    "url": "https://github.com/wind198/use-interval-hook.git"
   },
   "scripts": {
     "test": "jest --silent=false",
     "build-package": "tsc",
+    "build-package-watch": "tsc -w",
     "lint": "eslint --ext js,ts,tsx,stories src"
   },
   "keywords": [
     "React",
     "react",
     "typescript",
-    "list",
-    "list selection"
+    "setInterval",
+    "hook"
   ],
   "author": "tuanbk1908@gmail.com",
   "license": "ISC",
