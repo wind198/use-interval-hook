@@ -1,6 +1,6 @@
 {
   "name": "use-interval-hook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React hook to implement useInterval logics thit more tool to control how often the callback is called",
   "main": "dist/index.js",
   "repository": {

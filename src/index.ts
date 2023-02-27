@@ -38,8 +38,8 @@ export default function useIntervalHook(props: IUseIntervalHookProps) {
   const timerRef = useRef<NodeJS.Timer>();
 
   /*
-  * Indicate the amount of time passed since the hook get initialized 
-  */
+   * Indicate the amount of time passed since the hook get initialized
+   */
   const [timeLapse, setTimeLapse] = useState(0);
 
   /**
@@ -79,5 +79,7 @@ export default function useIntervalHook(props: IUseIntervalHookProps) {
     activate,
     stop,
     timeLapse,
+    isPaused,
+    timerRef,
   };
 }
